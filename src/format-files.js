@@ -54,6 +54,7 @@ function formatFilesFromArgv({
   prettierIgnore: applyPrettierIgnore = true,
   eslintConfigPath,
   prettierLast,
+  eslintResolvePluginsRelativeTo,
   ...prettierOptions
 }) {
   logger.setLevel(logLevel);
@@ -67,7 +68,8 @@ function formatFilesFromArgv({
 
   if (eslintConfigPath) {
     prettierESLintOptions.eslintConfig = {
-      overrideConfigFile: eslintConfigPath
+      overrideConfigFile: eslintConfigPath,
+      resolvePluginsRelativeTo: eslintResolvePluginsRelativeTo
     };
   }
 

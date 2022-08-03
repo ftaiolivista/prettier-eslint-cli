@@ -39,6 +39,12 @@ const parser = yargs
         (can use --no-eslint-ignore to disable this)
       `
     },
+    'eslint-resolve-plugins-relative-to': {
+      type: 'string',
+      describe: oneLine`
+        The folder where EsLint plugins should be resolved from, defaulting to the CWD.
+      `
+    },
     'prettier-ignore': {
       default: true,
       type: 'boolean',
